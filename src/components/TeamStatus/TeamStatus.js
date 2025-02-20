@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GameContext } from "../../../contexts/GameContext";
+import { GameContext } from "../../contexts/GameContext"; // 加上大括號！
 import "./TeamStatus.css";
 
 const TeamStatus = () => {
@@ -7,20 +7,10 @@ const TeamStatus = () => {
 
   return (
     <div className="team-status">
-      <h3>👥 隊伍狀態</h3>
+      <h3>隊伍狀態</h3>
       {teamMembers.map(member => (
-        <div key={member.id} className="member-card">
-          <div className="member-header">
-            <span className="member-name">{member.name}</span>
-            <span>Lv.{member.level}</span>
-          </div>
-          <div className="health-bar">
-            <div 
-              className="health-fill"
-              style={{ width: `${(member.hp / member.maxHp) * 100}%` }}
-            />
-            <span className="health-text">{member.hp}/{member.maxHp} HP</span>
-          </div>
+        <div key={member.id} className="team-member">
+          <span>{member.name}</span> - <span>HP: {member.hp}</span>
         </div>
       ))}
     </div>

@@ -16,10 +16,10 @@ const App = () => {
   const { darkMode, setDarkMode, inventoryVisible, setInventoryVisible } = useContext(GameContext);
 
   // 切換黑暗模式
-  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const toggleDarkMode = () => setDarkMode(prev => !prev);
 
   // 切換背包
-  const toggleInventory = () => setInventoryVisible(!inventoryVisible);
+  const toggleInventory = () => setInventoryVisible(prev => !prev);
 
   return (
     <div className={`app-container ${darkMode ? "dark-mode" : ""}`}>
@@ -31,6 +31,7 @@ const App = () => {
           className="dark-mode-toggle"
         />
         <h1>傲慢之塔</h1>
+        <p>當前樓層：第 1 層</p>
       </header>
 
       {/* 遊戲主畫面 */}
@@ -42,7 +43,6 @@ const App = () => {
 
       {/* 底部資訊欄 */}
       <footer className="footer">
-        <p>當前樓層：第 1 層</p>
         <Button
           onClick={toggleInventory}
           label={inventoryVisible ? "❌" : "🎒"}

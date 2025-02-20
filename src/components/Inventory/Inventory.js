@@ -1,23 +1,25 @@
-import React, { useContext } from "react";
-import { GameContext } from "../../../contexts/GameContext";
+import React, { useContext, useCallback } from "react";
+import { GameContext } from "../../contexts/GameContext";
 import "./Inventory.css";
 
 const Inventory = () => {
   const { inventoryItems, setInventoryItems } = useContext(GameContext);
 
-  const useItem = (itemId) => {
-    const updatedItems = inventoryItems.map(item => {
-      if (item.id === itemId) {
-        const newQuantity = item.quantity - 1;
-        return newQuantity > 0 
-          ? { ...item, quantity: newQuantity }
-          : null;
-      }
-      return item;
-    }).filter(Boolean);
-
-    setInventoryItems(updatedItems);
-  };
+  const handleUseItem = useCallback((itemId) => {
+    setInventoryItems(prevItems =>
+      prevItems
+        .map(item => {
+          if (item.id === itemId) {
+            const newQuantity = item.quantity - 1;
+            return newQuantity > 0 
+              ? { ...item, quantity: newQuantity }
+              : null;
+          }
+          return item;
+        })
+        .filter(Boolean)
+    );
+  }, [setInventoryItems]);
 
   return (
     <div className="inventory-panel">
@@ -27,7 +29,7 @@ const Inventory = () => {
           <div 
             key={item.id} 
             className="inventory-item"
-            onClick={() => useItem(item.id)}
+            onClick={() => handleUseItem(item.id)} // 這裡呼叫改名後的函式
           >
             <div className="item-icon">🛡️</div>
             <div className="item-info">
