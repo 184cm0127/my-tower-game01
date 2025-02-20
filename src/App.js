@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { GameProvider, GameContext } from "./contexts/GameContext";
 import GameScene from "./GameScene";
-import TeamStatus from "./components/UI/TeamStatus/TeamStatus";
-import Inventory from "./components/UI/Inventory/Inventory";
+import TeamStatus from './components/TeamStatus/TeamStatus.js';
+import Inventory from './components/Inventory/Inventory.js';
 import Button from "./components/UI/Button/Button";
 import "./App.css";
 
