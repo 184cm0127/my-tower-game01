@@ -1,0 +1,46 @@
+/* 黑暗模式全局變數 */
+:root {
+  --background-dark: #222;
+  --text-dark: #fff;
+  --background-light: #ccc;
+  --text-light: #000;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 黑暗模式切換 */
+.dark-mode .header,
+.dark-mode .footer {
+  background: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.header {
+  height: 5%;
+  background: var(--background-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main-content {
+  height: 75%;
+  position: relative;
+}
+
+.game-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  height: 20%;
+  background: var(--background-light);
+  padding: 10px;
+  position: relative;
+}

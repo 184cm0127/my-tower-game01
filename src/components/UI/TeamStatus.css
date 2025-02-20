@@ -1,0 +1,46 @@
+.team-status {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    min-width: 200px;
+  }
+  
+  .member-card {
+    margin: 10px 0;
+    padding: 8px;
+    background: #333;
+    border-radius: 5px;
+  }
+  
+  .member-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  .health-bar {
+    height: 20px;
+    background: #555;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .health-fill {
+    height: 100%;
+    background: #4CAF50;
+    transition: width 0.3s ease;
+  }
+  
+  .health-text {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    color: white;
+  }

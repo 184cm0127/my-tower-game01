@@ -1,0 +1,59 @@
+.game-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .top-bar {
+    height: 10%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .middle-section {
+    display: flex;
+    flex: 1;
+  }
+  
+  .left-panel, .right-panel {
+    width: 20%;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .game-canvas {
+    flex: 1;
+    background-color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bottom-section {
+    display: flex;
+    height: 20%;
+  }
+  
+  .player-info, .settings-panel {
+    width: 20%;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .chat-window {
+    flex: 1;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
